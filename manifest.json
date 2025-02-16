@@ -1,14 +1,19 @@
 {
     "name": "Wikidot - CSS Module Previewer",
     "version": "1.0.0",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "Nice.",
     "author": "7happy7",
-    "permissions": ["storage", "*://*.scp-wiki.net/*", "*://*.wikidot.com/*"],
-    "web_accessible_resources": ["js/*.js"],
+    "permissions": ["storage", "*://*.castopia.ct.ws/*", "*://*.wikidot.com/*"],
+    "web_accessible_resources": [
+        {
+            "resources": ["js/*.js"],
+            "matches": ["*://*.castopia.ct.ws/*", "*://*.wikidot.com/*"]
+        }
+    ],
     "content_scripts": [
         {
-            "matches": ["*://*.scp-wiki.net/*", "*://*.wikidot.com/*"],
+            "matches": ["*://*.castopia.ct.ws/*", "*://*.wikidot.com/*"],
             "js": ["js/loader.js"],
             "run_at": "document_end",
             "all_frames": true
